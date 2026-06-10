@@ -21,4 +21,6 @@ from littleLemon import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.hello, name='hello'),
+    path('say-hello/', views.say_hello, name='say_hello'),
+    path('home/', views.home, name='home')
 ]
