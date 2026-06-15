@@ -21,5 +21,9 @@ def home(request):
 
 def form_view(request):
     form = InputForm()
+    if request.method == "POST":
+        form = InputForm(request.POST)
+        if form.is_valid():
+            form.save()
     context = {"form": form}
     return render(request, "form.html", context)

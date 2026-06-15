@@ -11,3 +11,7 @@ class Menu(models.Model):
     price = models.IntegerField(null=False)
     category_id = models.ForeignKey(MenuCategory, on_delete=models.PROTECT,default=None)
                                     
+
+class InputForm(models.Model):
+    first_name=models.CharField(max_length=100)
+    last_name=models.CharField(max_length=100)
