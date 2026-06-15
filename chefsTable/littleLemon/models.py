@@ -15,3 +15,13 @@ class Menu(models.Model):
 class InputForm(models.Model):
     first_name=models.CharField(max_length=100)
     last_name=models.CharField(max_length=100)
+
+class Reservation(models.Model):
+    name = models.CharField(max_length=255,blank=True)
+    contact = models.CharField("Phone Number",max_length=255,blank=True)
+    time = models.TimeField()
+    count=models.IntegerField()
+    notes = models.CharField(max_length=300,blank=True)
+
+    def __str__(self):
+        return self.name

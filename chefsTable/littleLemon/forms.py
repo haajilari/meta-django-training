@@ -8,4 +8,4 @@ SHIFT = (
 class LogForm(forms.ModelForm):
     class Meta:
         model = InputForm
-        fields = ['first_name', 'last_name']
+        fields = "__all__"
