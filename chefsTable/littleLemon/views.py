@@ -1,34 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from datetime import datetime
-from littleLemon.forms import InputForm
-from .models import Menu
+
+
 # Create your views here.
-
-def hello(request):
-    return HttpResponse("Hello, SAG!")
-
-# # def menu_by_id(request, menu_id):
-# #     menu
-
-
-def say_hello(request):
-    return HttpResponse("Hello, And You are a KHAR :)!")
-
 def home(request):
-    date_joined = datetime.now().today().strftime("%Y-%m-%d")
-    return HttpResponse(f"Welcome to the KHAR STATION :) - Joined on {date_joined}")
+    return render(request, 'index.html')
 
-def form_view(request):
-    form = InputForm()
-    if request.method == "POST":
-        form = InputForm(request.POST)
-        if form.is_valid():
-            form.save()
-    context = {"form": form}
-    return render(request, "form.html", context)
+def about(request):
+    return render(request, 'about.html')
 
 def menu(request):
-    menu_items = Menu.objects.all()
-    items_dict = {"menu": menu_items}
-    return render(request, "menu.html", items_dict)
+    return render(request, 'menu.html')
+
+def book(request):
+    return render(request, 'book.html')

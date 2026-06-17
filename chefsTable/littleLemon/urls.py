@@ -1,11 +1,9 @@
-from django.contrib import admin
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.hello,),
-    path('say-hello/', views.say_hello, name='say_hello'),
-    # path('home/', views.home, name='home'),
-    path('form/', views.form_view, name='form_view')
-    # path('menu/<int:menu_id>/', views.menu_by_id, name='menu_by_id')
+    path('home/', views.home, name="home"),
+    path('about/', views.about, name="about"),
+    path('menu/', views.menu, name="menu"),
+    path('book/', views.book, name="book"),
 ]
